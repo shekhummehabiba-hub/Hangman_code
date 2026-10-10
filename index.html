@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hangman Game</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎮 Hangman Game</h1>
+
+        <p class="subtitle">
+            Guess the hidden word!
+        </p>
+
+        <div id="word" class="word">
+            _ _ _ _ _
+        </div>
+
+        <div class="info">
+
+            <p>
+                ❤️ Attempts Left:
+                <span id="attempts">6</span>
+            </p>
+
+            <p>
+                ❌ Wrong Letters:
+                <span id="wrongLetters">None</span>
+            </p>
+
+        </div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="letterInput"
+                maxlength="1"
+                placeholder="Enter a letter"
+            >
+
+            <button onclick="guessLetter()">
+                Guess
+            </button>
+
+        </div>
+
+        <button class="new-game"
+                onclick="newGame()">
+            🔄 New Game
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
